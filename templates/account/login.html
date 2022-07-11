@@ -1,0 +1,94 @@
+{% load tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar Sesion</title>
+  {% tailwind_css %}
+</head>
+<body>
+
+  <div method="POST" class="m-auto w-9/12 mt-24">
+
+    <section class="h-screen">
+      
+      <div>
+        {% if form.errors %}
+        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-2" role="alert">
+          <span class="block sm:inline"> {{form.non_field_errors }}</span>
+        </div>
+        {% endif %}
+      <div class="px-6 h-full text-gray-800">
+        <div
+          class="flex xl:justify-center lg:justify-between justify-center items-center flex-wrap h-full g-6"
+        >
+          <div
+            class="grow-0 shrink-1 md:shrink-0 basis-auto xl:w-6/12 lg:w-6/12 md:w-9/12 mb-12 md:mb-0"
+          >
+            <img
+              src="https://img.freepik.com/vector-gratis/flor-borde-dibujo-marco-rojo_1305-5760.jpg?w=740&t=st=1654629885~exp=1654630485~hmac=7a5c95ec07c025e52d66f045030a76134f2d3196bfd2045431a067e2afefb153"
+              class="w-full"
+              alt="Sample image"
+            />
+          </div>
+          <div class="xl:ml-20 xl:w-5/12 lg:w-5/12 md:w-8/12 mb-12 md:mb-0">
+            <form method="POST">
+            {% csrf_token %}
+              <div
+                class="flex items-center my-4 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5"
+              >
+                <p class="text-center font-semibold mx-4 mb-0 ">Iniciar Sesion</p>
+              </div>
+    
+              <!-- username input -->
+              <div class="mb-6">
+                <input
+                  type="text"
+                  class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                  id="username-name" 
+                  name="username"
+                  placeholder="Email address"
+                />
+              </div>
+    
+              <!-- Password input -->
+              <div class="mb-6">
+                <input
+                  type="password"
+                  class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                  id="password" 
+                  name="password" 
+                  placeholder="Password"
+                />
+              </div>
+    
+              <div class="text-center lg:text-left">
+                <button
+                  type="submit"
+                  class="inline-block px-7 py-3 bg-red-400 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-red-500 hover:shadow-lg focus:bg-red-500 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+                >
+                  Login
+                </button>
+                <p class="text-sm font-semibold mt-2 pt-1 mb-0">
+                  Don't have an account?
+                  <a
+                    href="#!"
+                    class="text-red-600 hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out"
+                    >Contact me</a
+                  >
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  </div>
+  
+</body>
+</html>
+
