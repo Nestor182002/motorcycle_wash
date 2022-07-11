@@ -1,6 +1,6 @@
 from core.settings.base import *
 
-DEBUG = True
+DEBUG = config('DEBUG')
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
@@ -13,9 +13,9 @@ DATABASES = {
 
         'NAME': 'motocicle_wash',
 
-        'USER': 'postgres',
+        'USER': config('USER'),
 
-        'PASSWORD': 'alpha2002',
+        'PASSWORD': config('PASSWORD'),
 
         'HOST': '127.0.0.1',
 
